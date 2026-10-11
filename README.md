@@ -74,9 +74,9 @@ Este notebook contiene la implementación, evaluación y comparación de tres mo
 
 | Modelo | Precisión (F1-Score) | Latencia Promedio (CPU) | Idiomas / Generalización | Tamaño en Disco (Parámetros) | Licencia / Viabilidad Comercial |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **RoBERTuito**<br>*(Español / Nativo)* | 1.0000<br>(Perfecto) | ~195.31 ms<br>(La más baja) | Especializado exclusivamente en español (modismos y textos informales). | ~435 MB (110M)<br>– Ideal para arquitecturas económicas o Serverless. | **Permisiva (MIT)**<br>– Apto para uso comercial sin restricciones. |
-| **XLM-RoBERTa**<br>*(Multilingual)* | 1.0000<br>(Excelente) | ~375.32 ms<br>(Penalización por multilingüismo) | Global (+100 idiomas); ideal para escalabilidad internacional. | ~1.1 GB (270M)<br>– Duplica los requisitos de RAM/VRAM y eleva costos. | **Permisiva (MIT)**<br>– Apto para uso comercial sin restricciones. |
-| **BETO Sentiment** | 0.8889<br>(Menor) | ~427.64 ms<br>(La más alta) | Español (análisis de sentimiento). | No especificado | **CC BY-NC-4.0**<br>– No comercial (Descartado para monetización directa). |
+| **RoBERT**<br>*(Español / Nativo)* | 1.0000<br>(Perfecto) | ~195.31 ms<br>(La más baja) | Especializado exclusivamente en español (modismos y textos informales). | ~435 MB (110M)<br>– Ideal para arquitecturas económicas o Serverless. | **Permisiva (MIT)**<br>– Apto para uso comercial sin restricciones. |
+| **RoBERTa**<br>*(Multilingual)* | 1.0000<br>(Excelente) | ~375.32 ms<br>(Penalización por multilingüismo) | Global (+100 idiomas); ideal para escalabilidad internacional. | ~1.1 GB (270M)<br>– Duplica los requisitos de RAM/VRAM y eleva costos. | **Permisiva (MIT)**<br>– Apto para uso comercial sin restricciones. |
+| **BETO** | 0.8889<br>(Menor) | ~427.64 ms<br>(La más alta) | Español (análisis de sentimiento). | No especificado | **CC BY-NC-4.0**<br>– No comercial (Descartado para monetización directa). |
 
 * **Decisión de ajuste mínimo:** Se cargaron los pesos ya especializados de cada modelo (`robertuito-sentiment-analysis`, `beto-sentiment-analysis` y `twitter-xlm-roberta-base-sentiment`) y se aplicó una función de mapeo simple en Python para unificar las etiquetas de salida (`LABEL_2`, `POS`, etc.) a un formato binario común (**1 para positivo, 0 para negativo**).
 * **Justificación del modelo recomendado:** **RoBERTuito** destaca como la opción más eficiente debido a su latencia de solo **~195.31 ms en CPU**, duplicando la velocidad de XLM-RoBERTa sin perder precisión, como lo demuestra su F1-Score perfecto de 1.0000. Al pesar apenas **435 MB**, reduce drásticamente el consumo de RAM y los costos de servidor, superando la pesada infraestructura de 1.1 GB de su competidor multilingüe. Además, su preentrenamiento nativo en español le permite entender a la perfección modismos, emojis y texto informal de redes sociales, con la gran ventaja de contar con una **licencia MIT** que habilita su explotación comercial sin las restricciones legales que limitan a modelos como BETO Sentiment.
@@ -111,7 +111,7 @@ Para llevar a cabo una evaluación ágil, consistente y comparable de los modelo
 * **BETO:** Es una opción robusta por ser entrenado nativamente en español de principio a fin, logrando un balance destacado, aunque con una latencia ligeramente mayor.
 * **RoBERTa:** Muestra métricas perfectas para la tarea, pero al ser un modelo multilingüe de gran tamaño, su latencia tiende a ser más pesada y computacionalmente demandante.
 
-> **Justificación Técnica:** Para entornos de prototipado rápido y producción donde la eficiencia es crítica, **RoBERTuito** destaca como la opción óptima por su rendimiento excepcional de latencia y adaptabilidad al lenguaje informal en español.
+**Justificación Técnica:** Para entornos de prototipado rápido y producción donde la eficiencia es crítica, **RoBERT** destaca como la opción óptima por su rendimiento excepcional de latencia y adaptabilidad al lenguaje informal en español.
 
 ## 5) Repositorio
 
