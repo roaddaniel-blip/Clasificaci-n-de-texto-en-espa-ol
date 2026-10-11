@@ -1,4 +1,4 @@
-# Clasificación de texto en español (Análisis de sentimiento) 
+# Clasificación de texto (Análisis de sentimiento) 
 
 Este notebook contiene la implementación, evaluación y comparación de tres modelos preentrenados del ecosistema de **Hugging Face** para un caso de uso de Procesamiento de Lenguaje Natural (NLP): **Análisis de Sentimiento / Clasificación de Texto** en español.
 
