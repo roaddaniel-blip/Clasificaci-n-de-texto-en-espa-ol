@@ -107,19 +107,15 @@ Para llevar a cabo una evaluación ágil, consistente y comparable de los modelo
 
 ### Conclusiones
 
-* **RoBERTuito:** Presenta la menor latencia promedio por inferencia, lo que lo convierte en un excelente candidato para escenarios de producción de tiempo real y baja infraestructura, manteniendo una métrica perfecta (1.0000) en este dataset acotado.
+* **RoBERT:** Presenta la menor latencia promedio por inferencia, lo que lo convierte en un excelente candidato para escenarios de producción de tiempo real y baja infraestructura, manteniendo una métrica perfecta (1.0000) en este dataset acotado.
 * **BETO:** Es una opción robusta por ser entrenado nativamente en español de principio a fin, logrando un balance destacado, aunque con una latencia ligeramente mayor.
-* **XLM-RoBERTa:** Muestra métricas perfectas para la tarea, pero al ser un modelo multilingüe de gran tamaño, su latencia tiende a ser más pesada y computacionalmente demandante.
+* **RoBERTa:** Muestra métricas perfectas para la tarea, pero al ser un modelo multilingüe de gran tamaño, su latencia tiende a ser más pesada y computacionalmente demandante.
 
 > **Justificación Técnica:** Para entornos de prototipado rápido y producción donde la eficiencia es crítica, **RoBERTuito** destaca como la opción óptima por su rendimiento excepcional de latencia y adaptabilidad al lenguaje informal en español.
 
 ## 5) Repositorio
 
 * **Archivos de soporte:**
-  * Dataset local de pruebas (formato estructurado en Python / JSON).
-  * Dataset de Hugging Face de referencia: [`paws-x`](https://huggingface.co).
+  * Dataset local de pruebas (formato estructurado en Python / CVS).
+  * Dataset de Hugging Face de referencia: [`paws-x`](https://docs.google.com/spreadsheets/d/10gvpfC2PjkMEej-xLwPfXUcV2H2RDkRf8oEHhZkPm28/edit?usp=sharing).
 * **Referencias:**
-  * Documentación de [Hugging Face Transformers](https://huggingface.co).
-  * Repositorio del modelo [RoBERTuito](https://huggingface.co).
-  * Repositorio del modelo [BETO](https://huggingface.co).
-  * Documentación de métricas en [Scikit-learn](https://scikit-learn.org).
